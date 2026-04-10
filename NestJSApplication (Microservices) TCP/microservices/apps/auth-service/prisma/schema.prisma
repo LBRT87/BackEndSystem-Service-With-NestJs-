@@ -1,0 +1,17 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../src/generated/prisma"
+  moduleFormat    = "cjs"
+}
+
+datasource db {
+    provider = "mysql"
+}
+
+model User {
+    Id Int  @id @default(autoincrement())
+    Email String @unique
+    Password String
+    RefreshToken String?
+}
+
